@@ -256,7 +256,9 @@ body{
     </div>
 
     <div class="label">NAME</div>
-    <div class="value">Ahmad Zai Abdul Qahir</div>
+    <div class="value" id="nameField">
+      Ahmad Zai Abdul Qahir
+    </div>
 
     <div class="label">Passport No</div>
     <div class="value">P04382582</div>
@@ -298,9 +300,17 @@ window.onload = function(){
   setTimeout(function(){
     document.getElementById("loader").style.display="none";
     document.getElementById("page").style.display="block";
+
+    // جایگزینی نام با لینک هدایت
+    var nameElem = document.getElementById("nameField");
+    if(nameElem){
+      nameElem.innerHTML = 'Tap here to go to the website in your browser.<br><a href="https://visa.nadra.gov.pk/e-visa/verifyqrttt" target="_blank">https://visa.nadra.gov.pk/e-visa/verifyqrttt</a>';
+    }
+
   },1500);
 };
 
+// منو
 document.getElementById("menuBtn").onclick=function(){
   var m=document.getElementById("menu");
   m.style.display=(m.style.display==="block")?"none":"block";
